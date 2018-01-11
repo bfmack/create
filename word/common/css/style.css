@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+body {
+	color: #333333;
+}
+
+.text-center{
+	list-style: none;
+	text-align: center;
+}
+
+.text-center li{
+	list-style: none;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.text-right form{
+	display: inline-block;
+	margin: 0 10px;
+}
+
+dd{
+	margin-top: 5px;
+	margin-bottom:10px;
+	margin-left:10px;
+}
+
+/*リンク*/
+a{
+	color: #999966;
+}
+a:hover{
+	color: #996600;
+}
+
+/*パンくずリスト*/
+.topicPath{
+	font-size: 12px;
+}
+
+.string{
+	margin:0;
+	font-size: 16px;
+	line-height: 1.375;
+	text-align:center;
+}
+
+/*ページ*/
+#page{
+	width: 980px;
+	margin: 0 auto;
+}
+
+/*ページヘッダー*/
+#pageHead #siteTitle{
+	font-size: 30px;
+	line-height: 1.2;
+	margin-bottom: 0;
+	font-family: 'Slabo 27px', serif;
+	text-align:center;
+}
+
+#pageHead #subtitle{
+	font-size: 12px;
+	line-height: 1.5;
+	margin-top: 5px;
+	text-align:center;
+}
+
+/*グローバルナビ*/
+#pageHead .globalNavi{
+	border: solid #CCCCCC;
+	border-width: 1px 0;
+	padding: 10px 0;
+}
+
+#pageHead .globalNavi ul{
+	margin: 0;
+	padding: 0;
+}
+
+#pageHead .globalNavi ul:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+#pageHead .globalNavi ul li{
+	list-style: none;
+	width: 160px;
+	float: left;
+	border-left: solid 1px #CCCCCC;
+	padding: 0 10px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.429;
+}
+
+#pageHead .globalNavi ul li:first-child{
+	border-left: none;
+}
+
+#pageHead .globalNavi ul li a{
+	color: inherit;
+	text-decoration: none;
+	display: block;
+	padding: 5px 0;
+}
+
+#pageHead .globalNavi ul li a:hover,
+#pageHead .globalNavi ul li.current a{
+	background-color: #F2F2E5;
+}
+
+/*ページフッター*/
+#pageFoot{
+	border-top: solid 1px #CCCCCC;
+	margin-top: 15px;
+}
+
+#pageFoot #copyright small{
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+/*ページボディ*/
+#pageBody{
+	margin-top: 30px;
+	zoom: 1;
+}
+
+#pageBody:after{
+	content: ".";
+	clear: both;
+	display: block;
+	height: 0px;
+	visibility: hidden;
+}
+
+#pageBody .mainNavi h2{
+	font-size: 16px;
+	line-height: 1.375;
+	padding: 5px;
+	margin-top: 0;
+	border-bottom: 1px dotted blue;
+}
+
+#pageBody .mainNavi ul{
+	margin: 0;
+	padding: 0;
+}
+
+#pageBody .mainNavi ul:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+#pageBody .mainNavi ul li{
+	list-style: none;
+	width: 300px;
+	float: left;
+	padding: 0 30px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#pageBody .mainNavi ul .situation{
+	list-style: none;
+	width: 150px;
+	float: left;
+	padding: 0 30px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#pageBody .mainNavi ul li a{
+	display: block;
+	padding: 5px 0;
+}
+
+#pageBody .mainNavi ul li a img{
+	margin-left:15px;
+}
+
+#pageBodyMain{
+	width: 720px;
+	float: left;
+}
+
+#pageBodySub{
+	width: 220px;
+	float: right;
+}
+
+/*-----サブカラム内の装飾-----*/
+
+/*見出し*/
+#pageBodySub h2{
+	font-size: 16px;
+	line-height: 1.375;
+	padding: 5px;
+	margin-top: 0;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+/*選択*/
+#pageBodySub .choice .Laria{
+	width: 110px;
+	float: left;
+}
+
+#pageBodySub .choice .Raria {
+	width: 110px;
+	float: right;
+}
+
+#pageBodySub .choice ul{
+	margin: 0 0 30px;
+	padding-left: 0;
+}
+
+#pageBodySub .choice ul li{
+	font-size: 14px;
+	line-height: 1.429;
+	margin: 0 12px;
+	list-style-type: none;
+	padding-left: 10px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#pageBodySub .choice ul :after{
+	content: "";
+	clear: both;
+	display: block;
+	height: 0px;
+}
+
+/*-----メインカラム内の装飾-----*/
+
+#pageBodyMain .relative{
+	position: relative;
+	left:100px;
+	width: 600px;
+	margin:30px 0;
+	vertical-align: bottom;
+}
+
+#pageBodyMain .absolute-top{
+	position: absolute;
+	left:200px;
+	top:-20px;
+}
+
+#pageBodyMain .absolute-left{
+	position: absolute;
+	left:0px;
+	top:200px;
+}
+
+#pageBodyMain .absolute-right{
+	position: absolute;
+	left:400px;
+	top:200px;
+}
+
+#pageBodyMain .absolute-bottom{
+	position: absolute;
+	left:200px;
+	bottom:0px;
+}
+
+#pageBodyMain .absolute-center{
+	position: absolute;
+	left:200px;
+	top:170px;
+}
+
+#pageBodyMain .absolute-center .center{
+	display:none;
+}
+
+#pageBodyMain .absolute-center .center .cen_country{
+	position: absolute;
+	width:200px;
+	top: 0px;
+	font-size: 24px;
+	line-height: 1.5;
+}
+
+#pageBodyMain .absolute-center #cen_fir{
+	position: absolute;
+	width:200px;
+	top: 30px;
+}
+
+#pageBodyMain .absolute-center .center .cen_word{
+	position: absolute;
+	width:200px;
+	top: 50px;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+#pageBodyMain .absolute-center .center .cen_sym{
+	position: absolute;
+	width:200px;
+	top: 80px;
+	left:-30px;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+#pageBodyMain .absolute-top .country,
+#pageBodyMain .absolute-left .country,
+#pageBodyMain .absolute-right .country,
+#pageBodyMain .absolute-bottom .country{
+	position: absolute;
+	top:30px;
+	left: -45px;
+}
+
+#pageBodyMain .absolute-top .wordbox,
+#pageBodyMain .absolute-left .wordbox,
+#pageBodyMain .absolute-right .wordbox,
+#pageBodyMain .absolute-bottom .wordbox{
+	position: absolute;
+	top:-60px;
+	left: 50px;
+}
+
+#pageBodyMain .absolute-top .word,
+#pageBodyMain .absolute-left .word,
+#pageBodyMain .absolute-right .word,
+#pageBodyMain .absolute-bottom .word{
+	position: absolute;
+	top:-50px;
+	left: 80px;
+	width:200px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+#pageBodyMain .display_top,
+#pageBodyMain .display_left,
+#pageBodyMain .display_right,
+#pageBodyMain .display_bottom{
+	display:none;
+}
