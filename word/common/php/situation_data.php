@@ -23,11 +23,11 @@ for($no=1;;$no++){
 }
 
 for($no=0; ${"situation".$no} != NULL; $no++){
-  print '<li><form method="post" name="wordlist" action="wordlist.php">';
+  print '<li><form method="post" name="wordlist'.$no.'" action="wordlist.php">';
   print '<input type="hidden" name="situation" value='.${"situation".$no}.'>';
   print '<input type="hidden" name="situation_key" value='.${"situation_key".$no}.'>';
   print '<input type="hidden" name="situation_img" value='.${"situation_img".$no}.'>';
-  print '<a href="javascript:wordlist['.$no.'].submit()">'.${"situation".$no}.'</a>';
+  print '<a href="javascript:document.wordlist'.$no.'.submit()">'.${"situation".$no}.'</a>';
   print '</form></li>';
 }
 /* ---終了--- */

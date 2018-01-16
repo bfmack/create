@@ -3,7 +3,7 @@
   <head>
 	<meta charset="utf-8">
 	<title>多言語学習アプリ</title>
-	<meta name="description" content="こんにちは！（多言語学習アプリ）のページです">
+	<meta name="description" content="翻訳のページです">
 
 	<link rel="stylesheet" href="common/css/normalize.css">
 	<link rel="stylesheet" href="common/css/style.css">
@@ -19,7 +19,7 @@
 		<p id="subtitle">状況にあわせたことばをいろんな言語で表示するアプリです。</p>
 		<nav class="globalNavi">
 		  <ul>
-		  <li><a href="#">ホーム</a></li>
+		  <li><a href="index.php">ホーム</a></li>
 		  <?php
 		  $situation=$_POST['situation'];
 		  $situation_key=$_POST['situation_key'];
@@ -125,7 +125,7 @@
 		  }
 		/*---終了(取り出すデータの位置情報を決定)---*/
 
-		  $sql='SELECT SITUATION_ID,LANGUAGE_ID,WORD,SOUND,TRANSLATE_WORD,SYMBOL FROM word WHERE LANGUAGE_ID=? AND WORD_KEY=?';
+		  $sql='SELECT SITUATION_ID,LANGUAGE_ID,SOUND,TRANSLATE_WORD,SYMBOL FROM word WHERE LANGUAGE_ID=? AND WORD_KEY=?';
 		  $stmt=$dbh->prepare($sql);
 		  $data[0]=${$pos."_id"};
 		  $data[1]=$word_key;
@@ -133,7 +133,6 @@
 
 		  $rec=$stmt->fetch(PDO::FETCH_ASSOC);
 
-		  $word=$rec['WORD'];
 		  ${$pos."_language"}=$rec['LANGUAGE_ID'];
 		  ${$pos."_translate"}=$rec['TRANSLATE_WORD'];
 		  ${$pos."_sound"}=$rec['SOUND'];
@@ -161,7 +160,7 @@
 		  print '<figcaption class="word"><p>'.${$pos."_translate"}.'</p></figcaption>';
 		  print '</div>';
 		  print '<audio id="sound_'.$pos.'" preload="auto">';
-		  print '<source src="sound/'.$top_sound.'" type="audio/wav">';
+		  print '<source src="sound/'.${$pos."_sound"}.'" type="audio/wav">';
 		  print '</audio>';
 		  print '</div>';
 		}
@@ -209,6 +208,9 @@
 			<h2>言語選択</h2>
 			<ul class="Laria">
 			<?php
+			if(($count-4)<=0){
+			  print '<li>国が登録されていません。</li>';
+			}
 			$x=round(($count-4)/2); //選択国数を２で割って整数化(切り捨て)
 			  for($a=1; $a<=$x; $a++){
 				$ch=$a+4; //表示位置
@@ -235,9 +237,12 @@
 				print'</form>';
 			  }
 			?>
-						</ul>
-						<ul class="Raria">
+			</ul>
+			<ul class="Raria">
 			<?php
+			if(($count-4)<=0){
+			  print '<li>国が登録されていません。</li>';
+			}
 			$x=round(($count-4)/2-0.5); //選択国数を２で割って整数化(切り上げ)
 			  for($a=1; $a<=$x; $a++){
 				$ch=$a+4+$x;
@@ -270,9 +275,9 @@
 			<ul>
 			<?php
 
-			if($mw==0){
-			  print '関連ワードがまだありません';
-			}
+			if($mw<=1){
+			  print '<p>関連ワードがまだありません</p>';
+			}else{
 			for($no=0; $no<$mw; $no++){
 			  if(${"wordURL".$no}!=null){
 				print '<li class="situation"><form method="post" name="translate" action="translate.php">';
@@ -284,6 +289,7 @@
 				print '<a href="javascript:translate['.$no.'].submit()">'.${"word".$no}.'</a>';
 				print '</form></li>';
 			  }
+			}
 			}
 			?>
 			</ul>

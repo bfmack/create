@@ -8,8 +8,6 @@
 	<link rel="stylesheet" href="common/css/normalize.css">
 	<link rel="stylesheet" href="common/css/style.css">
 
-	<script type="text/javascript" src="../common/js/fade.js"></script>
-
   </head>
 
   <body>
@@ -46,15 +44,16 @@
 			if($mw==0){
 			  print '関連ワードがまだありません';
 			}
+
 			for($no=0; $no<$mw; $no++){
 			  if(${"word_img".$no}!=null){
-				print '<li class="situation"><form method="post" name="translate" action="translate.php">';
+				print '<li class="situation"><form method="post" name="translate'.$no.'" action="translate.php">';
 				print '<input type="hidden" name="situation" value='.$situation.'>';
 				print '<input type="hidden" name="situation_key" value='.$situation_key.'>';
 				print '<input type="hidden" name="word" value='.${"word".$no}.'>';
 				print '<input type="hidden" name="word_key" value='.${"word_key".$no}.'>';
 				print '<input type="hidden" name="situation_img" value='.$situation_img.'>';
-				print '<a href="javascript:translate['.$no.'].submit()"><img src="img/'.$situation_img.'/'.${"word?img".$no}.'.png" height=50 width=50><br>'.${"word".$no}.'</a>';
+				print '<a href="javascript:document.translate'.$no.'.submit()"><img src="img/'.$situation_img.'/'.${"word_img".$no}.'.png" height=50 width=50><br>'.${"word".$no}.'</a>';
 				print '</form></li>';
 			  }
 			}

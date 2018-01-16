@@ -56,29 +56,10 @@ function fade(Word, Img){
 }
 
 function printword(pos){
-  if(pos == "top"){
-	document.getElementById("cen_fir").style.display = "none";
-	document.getElementById("cen_top").style.display = "block";
-	document.getElementById("cen_lef").style.display = "none";
-	document.getElementById("cen_rig").style.display = "none";
-	document.getElementById("cen_bot").style.display = "none";
-  }else if(pos == "left"){
-	document.getElementById("cen_fir").style.display = "none";
-	document.getElementById("cen_top").style.display = "none";
-	document.getElementById("cen_lef").style.display = "block";
-	document.getElementById("cen_rig").style.display = "none";
-	document.getElementById("cen_bot").style.display = "none";
-  }else if(pos == "right"){
-	document.getElementById("cen_fir").style.display = "none";
-	document.getElementById("cen_top").style.display = "none";
-	document.getElementById("cen_lef").style.display = "none";
-	document.getElementById("cen_rig").style.display = "block";
-	document.getElementById("cen_bot").style.display = "none";
-  }else if(pos == "bottom"){
-	document.getElementById("cen_fir").style.display = "none";
-	document.getElementById("cen_top").style.display = "none";
-	document.getElementById("cen_lef").style.display = "none";
-	document.getElementById("cen_rig").style.display = "none";
-	document.getElementById("cen_bot").style.display = "block";
-  }
+  document.getElementById("cen_fir").style.display = "none";
+  document.getElementById("cen_top").style.display = "none";
+  document.getElementById("cen_lef").style.display = "none";
+  document.getElementById("cen_rig").style.display = "none";
+  document.getElementById("cen_bot").style.display = "none";
+  document.getElementById("cen_" +pos).style.display = "block";
 }

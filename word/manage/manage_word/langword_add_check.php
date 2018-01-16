@@ -60,7 +60,7 @@
 			$data[]=$sound;
 			$data[]=$translate;
 			$data[]=$symbol;
-			$data[]=$word_key; 
+			$data[]=$word_key;
 			$stmt->execute($data);
 
 			$dbh=null;
